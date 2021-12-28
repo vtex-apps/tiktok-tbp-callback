@@ -1,10 +1,10 @@
 {
-  "name": "service-example",
+  "name": "tiktok-tbp-callback",
   "vendor": "vtex",
-  "version": "0.2.0",
-  "title": "Service Example",
-  "description": "Reference app for VTEX IO Services",
-  "mustUpdateAt": "2018-01-04",
+  "version": "0.0.1",
+  "title": "TikTok Business Plugin Callback Handler",
+  "description": "Secondary app that handles callbacks from TikTok during the TikTok Business Plugin onboarding flow.",
+  "mustUpdateAt": "2021-12-28",
   "categories": [],
   "dependencies": {},
   "builders": {
