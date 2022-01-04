@@ -1,7 +1,9 @@
 import type { ClientsConfig, ServiceContext, RecorderState } from '@vtex/api'
-import { Service } from '@vtex/api'
+import { Service, method } from '@vtex/api'
 
 import { Clients } from './clients'
+import { parseParams } from './middlewares/parseParams'
+import { redirect } from './middlewares/redirect'
 
 const TIMEOUT_MS = 800
 
@@ -31,4 +33,9 @@ declare global {
 // Export a service that defines route handlers and client options.
 export default new Service({
   clients,
+  routes: {
+    redirect: method({
+      GET: [parseParams, redirect],
+    }),
+  }
 })
