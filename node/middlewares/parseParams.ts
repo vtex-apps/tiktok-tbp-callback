@@ -1,10 +1,3 @@
-interface URLState {
-  account: string
-  workspace: string
-  salesChannelId: number
-  passPhrase: string
-}
-
 export async function parseParams(ctx: Context, next: () => Promise<void>) {
   const authCode = ctx.URL.searchParams.get('authCode') as string
   const state = ctx.URL.searchParams.get('state') as string

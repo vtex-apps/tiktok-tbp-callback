@@ -25,11 +25,7 @@ declare global {
   type Context = ServiceContext<Clients, State>
 
   // The shape of our State object found in `ctx.state`. This is used as state bag to communicate between middlewares.
-  interface State extends RecorderState {
-    account: string
-    workspace: string
-    salesChannelId: number
-    passPhrase: string
+  interface State extends RecorderState, URLState {
     authCode: string
   }
 }
