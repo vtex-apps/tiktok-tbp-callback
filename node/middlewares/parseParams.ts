@@ -7,12 +7,14 @@ interface URLState {
 
 export async function parseParams(ctx: Context, next: () => Promise<void>) {
   const authCode = ctx.URL.searchParams.get('authCode') as string
-  const state = (ctx.URL.searchParams.get('state') as unknown) as URLState
+  const state = ctx.URL.searchParams.get('state') as string
 
-  ctx.state.account = state.account
-  ctx.state.workspace = state.workspace
-  ctx.state.salesChannelId = state.salesChannelId
-  ctx.state.passPhrase = state.passPhrase
+  const parsedState: URLState = JSON.parse(state)
+
+  ctx.state.account = parsedState.account
+  ctx.state.workspace = parsedState.workspace
+  ctx.state.salesChannelId = parsedState.salesChannelId
+  ctx.state.passPhrase = parsedState.passPhrase
   ctx.state.authCode = authCode
 
   await next()
