@@ -1,11 +1,21 @@
-import type { ServiceContext } from '@vtex/api'
+interface URLState {
+  account: string
+  workspace: string
+  salesChannelId: number
+  passPhrase: string
+}
 
-export async function parseParams(ctx: ServiceContext, next: () => Promise<void>) {
-  // TODO: implement parseParams function
-  const authCode = ctx.URL.searchParams.get('authCode')
-  console.log("🚀 ~ file: redirect.ts ~ line 6 ~ redirect ~ code", authCode)
-  const state = ctx.URL.searchParams.get('state')
-  console.log("🚀 ~ file: redirect.ts ~ line 8 ~ redirect ~ state", state)
+export async function parseParams(ctx: Context, next: () => Promise<void>) {
+  const authCode = ctx.URL.searchParams.get('authCode') as string
+  const state = ctx.URL.searchParams.get('state') as string
+
+  const parsedState: URLState = JSON.parse(state)
+
+  ctx.state.account = parsedState.account
+  ctx.state.workspace = parsedState.workspace
+  ctx.state.salesChannelId = parsedState.salesChannelId
+  ctx.state.passPhrase = parsedState.passPhrase
+  ctx.state.authCode = authCode
 
   await next()
 }

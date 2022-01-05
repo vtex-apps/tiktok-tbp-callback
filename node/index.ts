@@ -26,7 +26,11 @@ declare global {
 
   // The shape of our State object found in `ctx.state`. This is used as state bag to communicate between middlewares.
   interface State extends RecorderState {
-    code: number
+    account: string
+    workspace: string
+    salesChannelId: number
+    passPhrase: string
+    authCode: string
   }
 }
 
@@ -37,5 +41,5 @@ export default new Service({
     redirect: method({
       GET: [parseParams, redirect],
     }),
-  }
+  },
 })
