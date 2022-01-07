@@ -9,6 +9,10 @@
     "redirect": {
       "path": "/v0/tiktok-tbp-callback/redirect",
       "public": true
+    },
+    "health": {
+      "path": "/v0/tiktok-tbp-callback/health",
+      "public": true
     }
   }
 }
