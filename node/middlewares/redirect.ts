@@ -1,8 +1,19 @@
 import type { ServiceContext } from '@vtex/api'
 
 export async function redirect(ctx: ServiceContext, next: () => Promise<void>) {
-  // TODO: implement redirect function
-  console.log("🚀 ~ file: redirect.ts ~ line 4 ~ redirect ~ ctx", ctx)
+  const redirectState = ctx.state as State
+
+  const redirectUri = `https://${
+    redirectState.workspace && redirectState.workspace !== 'master'
+      ? `${redirectState.workspace}--`
+      : ''
+  }${redirectState.account}.myvtex.com/v0/tiktok-tbp/connect?authCode=${
+    redirectState.authCode
+  }&salesChannelId=${redirectState.salesChannelId}&passPhrase=${
+    redirectState.passPhrase
+  }`
+
+  ctx.redirect(redirectUri)
 
   await next()
 }

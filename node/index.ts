@@ -5,7 +5,7 @@ import { Clients } from './clients'
 import { parseParams } from './middlewares/parseParams'
 import { redirect } from './middlewares/redirect'
 
-const TIMEOUT_MS = 800
+const TIMEOUT_MS = 2 * 1000
 
 // This is the configuration for clients available in `ctx.clients`.
 const clients: ClientsConfig<Clients> = {
@@ -25,11 +25,7 @@ declare global {
   type Context = ServiceContext<Clients, State>
 
   // The shape of our State object found in `ctx.state`. This is used as state bag to communicate between middlewares.
-  interface State extends RecorderState {
-    account: string
-    workspace: string
-    salesChannelId: number
-    passPhrase: string
+  interface State extends RecorderState, URLState {
     authCode: string
   }
 }
