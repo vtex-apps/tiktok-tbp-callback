@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Health endpoint to avoid timeout errors
+- Health route documentation to README
+
 ## [0.3.0] - 2022-01-07
 
 ### Added
