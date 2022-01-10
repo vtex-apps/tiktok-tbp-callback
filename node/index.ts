@@ -2,6 +2,7 @@ import type { ClientsConfig, ServiceContext, RecorderState } from '@vtex/api'
 import { Service, method } from '@vtex/api'
 
 import { Clients } from './clients'
+import { checkHealth } from './middlewares/checkHealth'
 import { parseParams } from './middlewares/parseParams'
 import { redirect } from './middlewares/redirect'
 
@@ -36,6 +37,9 @@ export default new Service({
   routes: {
     redirect: method({
       GET: [parseParams, redirect],
+    }),
+    health: method({
+      GET: [checkHealth],
     }),
   },
 })

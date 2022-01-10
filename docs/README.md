@@ -24,3 +24,13 @@ Upon receiving a request, the callback handler will:
 - Parse the `state` and `authCode` parameters.
 - Try to redirect the request to the VTEX account specified in the `state` parameter, using this URL `https://{workspace}--{account}.myvtex.com/v0/tiktok-tbp/connect` (if `workspace` is different from `master`) or this URL `https://{account}.myvtex.com/v0/tiktok-tbp/connect` (if `workspace` is equal to `master`) and resending the parameters `salesChannelId`, `passPhrase` and `authCode`.
 - That route will be in charge of handling the remaining steps of the integration (validating the `passPhrase`, saving the `salesChannelId` and the `accessToken` to the app settings, etc).
+
+## Health Route
+
+The health URL is defined as follows:
+
+```
+https://vtex.myvtex.com/v0/tiktok-tbp-callback/health
+```
+
+- This endpoint aims to wake up the app and to avoid timeout error that occurs if an app in IO doesn't receive a call for a long period of time.
