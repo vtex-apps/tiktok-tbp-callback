@@ -6,7 +6,7 @@ export async function parseParams(ctx: Context, next: () => Promise<void>) {
 
   ctx.state.account = parsedState.account
   ctx.state.workspace = parsedState.workspace
-  ctx.state.salesChannelId = parsedState.salesChannelId
+  ctx.state.tradePolicyId = parsedState.tradePolicyId
   ctx.state.passPhrase = parsedState.passPhrase
   ctx.state.authCode = authCode
 
