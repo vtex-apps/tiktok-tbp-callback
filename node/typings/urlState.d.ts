@@ -1,6 +1,6 @@
 interface URLState {
   account: string
   workspace: string
-  salesChannelId: number
+  tradePolicyId: number
   passPhrase: string
 }

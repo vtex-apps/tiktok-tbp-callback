@@ -9,7 +9,7 @@ export async function redirect(ctx: ServiceContext, next: () => Promise<void>) {
       : ''
   }${redirectState.account}.myvtex.com/v0/tiktok-tbp/connect?authCode=${
     redirectState.authCode
-  }&salesChannelId=${redirectState.salesChannelId}&passPhrase=${
+  }&tradePolicyId=${redirectState.tradePolicyId}&passPhrase=${
     redirectState.passPhrase
   }`
 
