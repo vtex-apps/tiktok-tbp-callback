@@ -7,7 +7,7 @@ export async function redirect(ctx: ServiceContext, next: () => Promise<void>) {
     redirectState.workspace && redirectState.workspace !== 'master'
       ? `${redirectState.workspace}--`
       : ''
-  }${redirectState.account}.myvtex.com/v0/tiktok-tbp/connect?authCode=${
+  }${redirectState.account}.myvtex.com/admin/tiktok-loading?authCode=${
     redirectState.authCode
   }&tradePolicyId=${redirectState.tradePolicyId}&passPhrase=${
     redirectState.passPhrase

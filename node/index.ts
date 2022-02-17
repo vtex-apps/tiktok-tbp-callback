@@ -6,7 +6,7 @@ import { checkHealth } from './middlewares/checkHealth'
 import { parseParams } from './middlewares/parseParams'
 import { redirect } from './middlewares/redirect'
 
-const TIMEOUT_MS = 2 * 1000
+const TIMEOUT_MS = 10 * 1000
 
 // This is the configuration for clients available in `ctx.clients`.
 const clients: ClientsConfig<Clients> = {
