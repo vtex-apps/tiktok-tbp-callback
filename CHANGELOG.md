@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+- Input `app` in the redirect URL
+
 ## [0.5.0] - 2022-02-18
 
 ### Changed
