@@ -9,7 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- Change redirect URL and increase timeout
 - Renamed `salesChannelId` to `tradePolicyId`
+
+### Fixed
+
+- Params were not being resolved correctly
 
 ## [0.4.0] - 2022-01-10
 
