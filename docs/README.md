@@ -1,5 +1,7 @@
 # TikTok Business Plugin - Callback Handler
 
+> ⚠️ This app is no longer maintained by VTEX. This means support and maintenance are no longer provided.
+
 This is a secondary app that handles callbacks for the TikTok Business Plugin. Its purpose is to provide a generic, account agnostic route that TikTok will call upon completing the onboarding flow. The redirect URL which is specified in the TikTok App is fixed and should not be bound to any specific account - and for that purpose, this App is going to be installed on the `vtex` account.
 
 ## Callback Route
